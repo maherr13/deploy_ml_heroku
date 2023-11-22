@@ -39,7 +39,7 @@ def test_predict():
         'age': 38,
         'workclass' : "state-gov",
         'education' : "bachelors",
-        'marital_status' : "never-married",
+        'maritalstatus' : "never-married",
         'occupation' : "adm-clerical",
         'relationship' : "not-in-family",
         'race' : "white",
