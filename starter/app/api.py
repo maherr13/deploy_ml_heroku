@@ -14,7 +14,7 @@ from fastapi import FastAPI, Body
 from enum import Enum
 from typing import Optional
 from pydantic import BaseModel
-
+from sklearn.externals import joblib
 
 cat_features = [
     "workclass",
