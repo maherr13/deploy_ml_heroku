@@ -37,11 +37,20 @@ def test_feature_info(test_input: str, expected: str):
 def test_predict():
     data = {
         'age': 38,
+        'workclass' : "state-gov",
+        'education' : "bachelors",
+        'marital_status' : "never-married",
+        'occupation' : "adm-clerical",
+        'relationship' : "not-in-family",
+        'race' : "white",
+        'sex' : "male",
+        'native-country' : "united-states",
         'fnlwgt': 15,
-        'education-num': 1,
-        'capital-gain': 0,
-        'capital-loss': 0,
-        'hours-per-week': 5
+        'educationnum': 1,
+        'capitalgain': 0,
+        'capitalloss': 0,
+        'hoursperweek': 5,
+
     }
     response = client.post("/predict/", json=data)
     assert_response(response, HTTPStatus.OK, "POST")
