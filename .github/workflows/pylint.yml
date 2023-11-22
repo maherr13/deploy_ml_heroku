@@ -19,6 +19,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: check dirs
+      run: |
+        ls -l
     - name: Analysing the code with pylint
       run: |
         flake8 . --count --show-source --exit-zero --max-line-length=127 --statistics --max-complexity=1
