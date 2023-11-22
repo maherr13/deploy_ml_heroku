@@ -1,0 +1,5 @@
+outs:
+- md5: e32a205786d8045c8544176b975d6aea
+  size: 389852
+  hash: md5
+  path: model_xgboots.pkl
