@@ -61,7 +61,7 @@ def test_marital_status(data: ge.dataset.PandasDataset):
         'never-married', 'married-civ-spouse', 'divorced',
         'married-spouse-absent', 'separated', 'married-af-spouse', 'widowed'
     ]
-    assert data.expect_column_distinct_values_to_equal_set('marital=status', expected_categories)[
+    assert data.expect_column_distinct_values_to_equal_set('maritalstatus', expected_categories)[
         'success'], "marital_status column includes unknown category"
 
 
