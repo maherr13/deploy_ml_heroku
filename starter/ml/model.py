@@ -1,11 +1,17 @@
+
+"""
+Author: Ahmed Maher
+Date: Nov, 2021
+This script used for functions utlization for models
+"""
+
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-import os
 import logging
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Optional: implement hyperparameter tuning.
+
+
 def train_model(model, X_train, y_train):
     """
     Trains a machine learning model and returns it.
@@ -28,7 +34,8 @@ def train_model(model, X_train, y_train):
 
 def compute_model_metrics(y, preds):
     """
-    Validates the trained machine learning model using precision, recall, and F1.
+    Validates the trained machine learning model using
+    precision, recall, and F1.
 
     Inputs
     ------
@@ -65,6 +72,7 @@ def inference(model, X):
     result = model.predict(X)
     return result
 
+
 def slice_metrics(column, X, y_true, y_pred, lb):
     """
     Calculates metrics on a slice of data for a specific column
@@ -78,11 +86,9 @@ def slice_metrics(column, X, y_true, y_pred, lb):
     Returns:
         pandas dataframe: Dataframe with metrics for each category
     """
-    # print(X[column].shape)
-    # df = pd.DataFrame({column: X[[column]].values.tolist(), 'salary_true': y_true, 'salary_pred': y_pred})
     df = pd.concat([X[column].copy(), y_true], axis=1)
     df['salary_pred'] = y_pred
-    
+
     metrics = []
     for categ in df[column].unique():
         subset_df = df[df[column] == categ]
@@ -90,10 +96,16 @@ def slice_metrics(column, X, y_true, y_pred, lb):
         prec, rec, f1 = compute_model_metrics(subset_df['salary_pred'], y)
         metrics.append([categ, prec, rec, f1])
 
-    return pd.DataFrame(metrics, columns=['Category', 'Precision', 'Recall', 'F1'])
+    return pd.DataFrame(
+        metrics,
+        columns=[
+            'Category',
+            'Precision',
+            'Recall',
+            'F1'])
 
 
-def evaluate_slices(output_file, model_pipe, column, X, y, split, data,lb):
+def evaluate_slices(output_file, model_pipe, column, X, y, split, data, lb):
     """
     Evaluating model on a slice of data for a specific column
     and data split and saving the results to a file
@@ -111,8 +123,9 @@ def evaluate_slices(output_file, model_pipe, column, X, y, split, data,lb):
     logging.info(f"Evaluating {column} on slice of {split} data")
 
     y_pred = inference(model_pipe, X)
-    slice_df = slice_metrics(column, data.drop('salary', axis=1), data[['salary']], y_pred, lb)
-    
+    slice_df = slice_metrics(column, data.drop(
+        'salary', axis=1), data[['salary']], y_pred, lb)
+
     with open(output_file, "a") as file:
         print(f"Model evaluation on {column} slice of {split} data", file=file)
         print(slice_df.to_string(index=False), file=file)
