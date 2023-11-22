@@ -8,7 +8,6 @@ import pytest
 import pandas as pd
 import great_expectations as ge
 from sklearn.model_selection import train_test_split
-import config
 
 
 @pytest.fixture(scope='session')
