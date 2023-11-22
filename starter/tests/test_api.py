@@ -44,7 +44,7 @@ def test_predict():
         'relationship' : "not-in-family",
         'race' : "white",
         'sex' : "male",
-        'native-country' : "united-states",
+        'nativecountry' : "united-states",
         'fnlwgt': 15,
         'educationnum': 1,
         'capitalgain': 0,
