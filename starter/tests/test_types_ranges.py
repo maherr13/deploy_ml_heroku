@@ -36,7 +36,7 @@ def test_column_dtypes(data: ge.dataset.PandasDataset):
         'fnlwgt': 'int64',
         'education': 'object',
         'educationnum': 'int64',
-        'marital-status': 'object',
+        'maritalstatus': 'object',
         'occupation': 'object',
         'relationship': 'object',
         'race': 'object',
