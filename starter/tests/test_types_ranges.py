@@ -35,7 +35,7 @@ def test_column_dtypes(data: ge.dataset.PandasDataset):
         'workclass': 'object',
         'fnlwgt': 'int64',
         'education': 'object',
-        'education-num': 'int64',
+        'educationnum': 'int64',
         'marital-status': 'object',
         'occupation': 'object',
         'relationship': 'object',
@@ -52,7 +52,7 @@ def test_column_dtypes(data: ge.dataset.PandasDataset):
 
 
 def test_education_num_column(data: ge.dataset.PandasDataset):
-    assert data.expect_column_values_to_be_between('education-num', 1, 17)[
+    assert data.expect_column_values_to_be_between('educationnum', 1, 17)[
         'success'], "education_num column includes unknown category"
 
 
@@ -72,5 +72,5 @@ def test_label_salary(data: ge.dataset.PandasDataset):
 
 
 def test_hours_per_week_range(data: ge.dataset.PandasDataset):
-    assert data.expect_column_values_to_be_between('hours-per-week', 1, 99)[
+    assert data.expect_column_values_to_be_between('hoursperweek', 1, 99)[
         'success'], "hours_per_week column is not within range of 1 and 99"
