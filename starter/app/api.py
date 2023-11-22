@@ -3,11 +3,7 @@ Author: Ahmed Maher
 Date: Nov, 2023
 This script hold the fastapi
 """
-"""
-Author: Ahmed Maher
-Date: Nov, 2023
-This script hold the fastapi
-"""
+
 import os
 import sys
 import yaml
