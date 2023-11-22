@@ -20,10 +20,7 @@ def data():
     """
     if not os.path.exists('data/clean.csv'):
         pytest.fail(f"Data not found at path")
-
-    X_df['salary'] = y_df
-    X_df['salary'] = X_df['salary'].map({1: '>50k', 0: '<=50k'})
-
-    df = ge.from_pandas(X_df)
+    df = pd.read_csv('data/clean.csv')
+    df = ge.from_pandas(df)
 
     return df
