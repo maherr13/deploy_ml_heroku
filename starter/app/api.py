@@ -87,8 +87,8 @@ app = FastAPI(
 )
 
 example_dir = "starter/app/samples.yaml"
-model_path = "starter/models/md_lg.pkl"
-encoder = "starter/models/encoder.pkl"
+model_path = "models/md_lg.pkl"
+encoder = "models/encoder.pkl"
 with open(example_dir) as fp:
     examples = yaml.safe_load(fp)
 encoder = joblib.load(encoder)
