@@ -16,7 +16,7 @@ def test_greetings():
 
 @pytest.mark.parametrize('test_input, expected', [
     ('age', "Age of the person - numerical - int"),
-    ('fnlgt', 'MORE INFO NEEDED - numerical - int'),
+    ('fnlwgt', 'MORE INFO NEEDED - numerical - int'),
     ('race', 'Race of the person - nominal categorical - str')
 ])
 def test_feature_info(test_input: str, expected: str):
@@ -27,11 +27,11 @@ def test_feature_info(test_input: str, expected: str):
 def test_predict():
     data = {
         'age': 38,
-        'fnlgt': 15,
-        'education_num': 1,
-        'capital_gain': 0,
-        'capital_loss': 0,
-        'hours_per_week': 5
+        'fnlwgt': 15,
+        'educationnum': 1,
+        'capitalgain': 0,
+        'capitalloss': 0,
+        'hoursperweek': 5
     }
     response = client.post("/predict/", json=data)
     assert_response(response, HTTPStatus.OK, "POST")
