@@ -91,8 +91,9 @@ model_path = "starter/models/md_lg.pkl"
 encoder = "stater/models/encoder.pkl"
 with open(example_dir) as fp:
     examples = yaml.safe_load(fp)
-model = joblib.load(model_path)
 encoder = joblib.load(encoder)
+model = joblib.load(model_path)
+
 
 
 
