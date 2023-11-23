@@ -1,7 +1,7 @@
 dvc
 dvc-gdrive
 numpy
-fastapi
+fastapi==0.63.0
 joblib
 flake8
 pandas
