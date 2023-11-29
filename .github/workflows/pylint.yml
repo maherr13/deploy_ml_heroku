@@ -29,6 +29,10 @@ jobs:
         role-session-name: Github_Action
     - name: DVC install
       uses: iterative/setup-dvc@v1
+    - name: Install dvc-s3
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install dvc-s3
     - name: Pull
       run: |
         dvc pull
