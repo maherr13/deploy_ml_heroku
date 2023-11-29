@@ -85,9 +85,9 @@ app = FastAPI(
     description="Deploying a ML Model FastAPI",
 )
 
-example_dir = "starter/app/samples.yaml"
-model_path = "models/md_lg.pkl"
-encoder = "models/encoder.pkl"
+example_dir = "/app/starter/app/samples.yaml"
+model_path = "/app/models/md_lg.pkl"
+encoder = "/app/models/encoder.pkl"
 encoder = joblib.load(encoder)
 model = joblib.load(model_path)
 with open(example_dir) as fp:
