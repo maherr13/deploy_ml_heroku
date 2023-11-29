@@ -1,6 +1,6 @@
 """
-Author: Ibrahim Sherif
-Date: October, 2021
+Author: Ahmed Maher
+Date: Nov, 2023
 This script holds the conftest data used with pytest module
 """
 import os
