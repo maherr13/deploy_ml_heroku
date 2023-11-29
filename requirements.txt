@@ -9,4 +9,4 @@ pytest
 scikit-learn
 uvicorn
 great_expectations
-pandas-profiling
+

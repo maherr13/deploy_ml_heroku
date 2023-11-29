@@ -1,4 +1,4 @@
 [core]
-    remote = driveremote
-['remote "driveremote"']
-    url = gdrive://1mn9Xb_QyzbR3FoYH6Gtb6W-IMnS7xWcF
+    remote = awsremote
+['remote "awsremote"']
+    url = s3://census-project-bucket
