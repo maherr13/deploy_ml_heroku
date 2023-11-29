@@ -67,6 +67,8 @@ logging.info("Cleaning and Saving data ..")
 data = data.replace('?', None)
 data.dropna(inplace=True)
 data = data.applymap(lambda x:x.lower() if isinstance(x,str) else x)
+
+data.to_csv('../data/clean.csv')
 X_train, y_train, encoder, lb = process_data(
     train,
     categorical_features=cat_features,
