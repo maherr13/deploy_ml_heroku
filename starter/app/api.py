@@ -15,6 +15,12 @@ from enum import Enum
 from typing import Optional
 from pydantic import BaseModel
 from pathlib import Path 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*']
+)
 
 cat_features = [
     "workclass",
