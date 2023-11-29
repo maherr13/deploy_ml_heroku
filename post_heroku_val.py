@@ -1,5 +1,5 @@
 import requests
-
+import json
 
 data = {
         'age': 38,
@@ -21,6 +21,6 @@ data = {
 
 
 # POST request
-response = requests.post('https://heroku-fastapi-census-app-85a21dcace20.herokuapp.com/predict/', json=data)
+response = requests.post('https://census-project-heroku-e79fa8f445c1.herokuapp.com/', data=json.dumps(data))
 print("Response code: ", response.status_code)
 print("Response body: ",response.json())

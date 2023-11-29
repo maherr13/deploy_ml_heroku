@@ -74,20 +74,22 @@ class Person(BaseModel):
     hoursperweek: int
     nativecountry: Optional[str] = None
 
-# if "DYNO" in os.environ and os.path.isdir("../.dvc"):
-#     os.system("dvc config core.no_scm true")
-#     if os.system("dvc pull") != 0:
-#         exit("dvc pull failed")
-#     os.system("rm -r ../.dvc ../.apt/usr/lib/dvc")
+if "DYNO" in os.environ and os.path.isdir("../.dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system("dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r ../.dvc ../.apt/usr/lib/dvc")
 
 app = FastAPI(
     title="Census",
     description="Deploying a ML Model FastAPI",
 )
 
-example_dir = "/app/starter/app/samples.yaml"
-model_path = "/app/models/md_lg.pkl"
-encoder = "/app/models/encoder.pkl"
+root = Path(__file__).parent.parent.parent
+
+example_dir = os.path.join(root, "starter/app/samples.yaml")
+model_path = os.path.join(root, "models/md_lg.pkl")
+encoder = os.path.join(root, "models/encoder.pkl")
 encoder = joblib.load(encoder)
 model = joblib.load(model_path)
 with open(example_dir) as fp:
