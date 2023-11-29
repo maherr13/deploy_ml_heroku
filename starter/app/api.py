@@ -85,19 +85,13 @@ app = FastAPI(
     description="Deploying a ML Model FastAPI",
 )
 
-#example_dir = "starter/app/samples.yaml"
-#model_path = "models/md_lg.pkl"
-#encoder = "models/encoder.pkl"
-example_dir = "/home/ahmed-maher-ai/udacity/test/deploy_ml_heroku/starter/app/samples.yaml"
-model_path = "/home/ahmed-maher-ai/udacity/V4/deploy_ml_heroku/models/md_lg.pkl"
-encoder = "/home/ahmed-maher-ai/udacity/V4/deploy_ml_heroku/models/encoder.pkl"
+example_dir = "starter/app/samples.yaml"
+model_path = "models/md_lg.pkl"
+encoder = "models/encoder.pkl"
 encoder = joblib.load(encoder)
 model = joblib.load(model_path)
 with open(example_dir) as fp:
     examples = yaml.safe_load(fp)
-
-
-
 
 
 @app.get("/")
