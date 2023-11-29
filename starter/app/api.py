@@ -14,6 +14,7 @@ from fastapi import FastAPI, Body
 from enum import Enum
 from typing import Optional
 from pydantic import BaseModel
+from pathlib import Path 
 
 cat_features = [
     "workclass",
