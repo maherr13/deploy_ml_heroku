@@ -1,5 +1,5 @@
 dvc
-dvc-gdrive
+dvc-s3
 numpy
 fastapi==0.63.0
 joblib
