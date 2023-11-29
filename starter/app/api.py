@@ -15,6 +15,9 @@ from enum import Enum
 from typing import Optional
 from pydantic import BaseModel
 from pathlib import Path 
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 cat_features = [
     "workclass",
@@ -84,6 +87,10 @@ if "DYNO" in os.environ and os.path.isdir("../.dvc"):
 app = FastAPI(
     title="Census",
     description="Deploying a ML Model FastAPI",
+)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*']
 )
 
 root = Path(__file__).parent.parent.parent
