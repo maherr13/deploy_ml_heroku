@@ -21,6 +21,6 @@ data = {
 
 
 # POST request
-response = requests.post('https://census-project-heroku-e79fa8f445c1.herokuapp.com/', data=json.dumps(data))
+response = requests.post('https://census-project-heroku-e79fa8f445c1.herokuapp.com/predict/', json=data)
 print("Response code: ", response.status_code)
 print("Response body: ",response.json())
