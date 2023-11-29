@@ -1,1 +1,1 @@
-web: pip install dvc dvc-s3 && cd starter && uvicorn app.api:app --host 0.0.0.0 --port $PORT
+web: AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY uvicorn main:app --host 0.0.0.0 --port $PORT
